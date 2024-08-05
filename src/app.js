@@ -5,28 +5,44 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
+import "bootstrap";
+import "./style.css";
+
+import "./assets/img/rigo-baby.jpg";
+import "./assets/img/4geeks.ico";
+
 window.onload = function() {
   //write your code here
-  function generadordeExcusas(){
-    const quien = ['My perro', 'Mi abuela', 'mi mama', 'Mi gato'];
-    const action = ['se comio', 'se orino', 'destruyo', 'escondio'];
-    const que = ['mi tarea', 'mi computadora', 'Las llaves'];
-    const cuando = ['antes de la llamada', 'cuando dormia', 'mientras hacia ejercicio', 'Almorzando', 'Mientras rezaba el Rosario'];
-  
-    // Donde inicia la magia del excusometro
-    const quienAleatorio = quien[Math.floor(Math.random() * quien.length)];
-    const actionAleatorio =  action[Math.floor(Math.random() * action.length)];
-    const  queAleatorio =    que[Math.floor(Math.random() * que.length)];
-    const  cuandoAleatorio =    cuando[Math.floor(Math.random() * cuando.length)];
 
-    // falta completar la magia
+  function excuseGenerator() {
+    let who = ["The dog", "my mom", "my father", "my granpa", "my grandma"];
+    let action = ["ate", "pooped", "crush", "took", "broke"];
+    let what = ["My laptop", "My keyboard", "My phone", "My house"];
+    let when = [
+      "before the class",
+      "After the class",
+      "when I was not home",
+      "during my lunch"
+    ];
 
-    const excusaCompleta = `${quienAleatorio} ${actionAleatorio} ${queAleatorio} ${cuandoAleatorio}`;
+    const randomWho = Math.floor(Math.random() * who.length);
+    const randomAction = Math.floor(Math.random() * action.length);
+    const randomWhat = Math.floor(Math.random() * what.length);
+    const randomWhen = Math.floor(Math.random() * when.length);
 
-    return excusaCompleta;
+    const excuses =
+      who[randomWho] +
+      " " +
+      action[randomAction] +
+      " " +
+      what[randomWhat] +
+      " " +
+      when[randomWhen];
+
+    document.getElementById("excuse").textContent = excuses;
   }
 
-  const excusagenerada = generadordeExcusas();
-  console.log(excusagenerada);
+  document
+    .getElementById("generate-button")
+    .addEventListener("click", excuseGenerator);
 };
-
