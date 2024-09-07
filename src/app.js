@@ -15,10 +15,10 @@ window.onload = function() {
   //write your code here
 
   function excuseGenerator() {
-    let who = ["The dog", "my mom", "my father", "my granpa", "my grandma"];
-    let action = ["ate", "pooped", "crush", "took", "broke"];
-    let what = ["My laptop", "My keyboard", "My phone", "My house"];
-    let when = [
+    const who = ["The dog", "my mom", "my father", "my granpa", "my grandma"];
+    const action = ["ate", "pooped", "crush", "took", "broke"];
+    const what = ["My laptop", "My keyboard", "My phone", "My house"];
+    const when = [
       "before the class",
       "After the class",
       "when I was not home",
@@ -43,6 +43,6 @@ window.onload = function() {
   }
 
   document
-    .getElementById("generate-button")
+    .getElementById("generateExcuse")
     .addEventListener("click", excuseGenerator);
 };
